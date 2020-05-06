@@ -1,0 +1,5 @@
+fields{
+  optional{
+    appWorkSpace = String
+  }
+}

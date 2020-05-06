@@ -1,0 +1,19 @@
+on_pull_request {
+    build()
+    unit_test()
+    static_code_analysis()
+    static_docker_analysis()
+}
+
+on_merge to: master, {
+    build()
+    unit_test()
+    static_code_analysis()
+    static_docker_analysis()
+    
+    docker_build_to prod
+    docker_image_registry_to prod
+    
+    approve_to prod
+    docker_deploy_to prod
+}
