@@ -1,5 +1,5 @@
 @Init
-void call(Map context) {
+void call() {
   node{
       //unstash "workspace"
 
