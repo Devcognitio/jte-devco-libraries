@@ -1,5 +1,0 @@
-fields{
-  optional{
-    appWorkSpace = String
-  }
-}
