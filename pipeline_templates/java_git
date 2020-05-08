@@ -1,13 +1,11 @@
 on_pull_request {
     build()
     unit_test()
-    static_code_analysis()
 }
 
 on_merge to: master, {
     build()
     unit_test()
-    static_code_analysis()
     
     approve_to prod
     deploy_to prod

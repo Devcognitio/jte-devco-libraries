@@ -1,6 +1,5 @@
 checkout_git()
 build()
 unit_test()
-static_code_analysis()
 approve_to prod
 deploy_to prod
