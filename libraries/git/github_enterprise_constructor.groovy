@@ -1,1 +1,0 @@
-//TODO: revisar los contructores que parece que tienen problemas
