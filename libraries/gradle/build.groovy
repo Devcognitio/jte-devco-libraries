@@ -5,7 +5,7 @@ void call(){
     stage("build gradle"){
         node {
             docker.image(docker_image).withRun(){ c ->
-                unstash "workspace"
+                //unstash "workspace"
 
                 sh 'chmod +x gradlew'
                 sh './gradlew clean build -DskipTests=true'
