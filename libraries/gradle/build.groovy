@@ -1,9 +1,10 @@
 void call(){
-    def docker_image = config.docker_image ?:
+    String docker_image = config.docker_image ?:
             "maven:3-alpine"
 
     stage("build gradle"){
         node {
+            echo "docker_image: $docker_image"
             docker.image(docker_image){ c ->
                 unstash "workspace"
 
