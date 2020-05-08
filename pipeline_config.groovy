@@ -3,7 +3,7 @@ libraries{
     hola_mundo
     gradle
     approve
-    github{
+    git{
         source_type = "github"
     }
 }
