@@ -16,3 +16,6 @@ application_environments{
         long_name = "Production"
     }
 }
+
+merge = true
+allow_scm_jenkinsfile = false
