@@ -1,5 +1,5 @@
 fields{
   optional{
-    appWorkSpace = String
+    docker_image = String
   }
 }
