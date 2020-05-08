@@ -1,11 +1,10 @@
 void call(){
-    String docker_image = config.docker_image ?:
+    def docker_image = config.docker_image ?:
             "maven:3-alpine"
 
     stage("build gradle"){
         node {
-            echo "docker_image: $docker_image"
-            docker.image(docker_image){ c ->
+            docker.image(docker_image).withRun(){ c ->
                 unstash "workspace"
 
                 sh 'chmod +x gradlew'
