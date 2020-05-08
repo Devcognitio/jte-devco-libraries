@@ -1,5 +1,5 @@
 fields{
   optional{
-    docker_image = String
+    java_tool = String
   }
 }

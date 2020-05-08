@@ -1,15 +1,12 @@
 void call(){
-    def docker_image = config.docker_image ?:
-            "maven:3-alpine"
+    def java_tool_name = config.java_tool ?:
+            "java"
+    def java = tool "$java_tool_name"
 
     stage("unit test gradle"){
         node{
-            docker.image(docker_image){ c ->
-                unstash "workspace"
-
+            withEnv(["PATH=$java/bin:$PATH"]) {
                 sh './gradlew test'
-                
-                stash name: 'workspace', includes: "**"
             }
         }                
     }  
