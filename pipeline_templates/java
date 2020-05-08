@@ -1,4 +1,4 @@
-checkout()
+checkout_git()
 build()
 unit_test()
 static_code_analysis()
