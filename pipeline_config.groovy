@@ -1,7 +1,8 @@
 libraries{
     merge = true
-    hola_mundo
-    approve
+    hola_mundo{
+        branch_conditional = "master"
+    }
 }
 
 application_environments{
