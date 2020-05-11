@@ -3,7 +3,7 @@ void call(app_env){
     def branch_conditional = config.branch_conditional ?:
             "s"
 
-    if(branch_conditional == "s" || branch_conditional == $GIT_BRANCH){
+    if(branch_conditional == "s" || branch_conditional == $env.BRANCH_NAME){
         stage ("Deploy Approve to ${app_env.long_name}") {
             echo "Branch: $env.BRANCH_NAME, conditional: $branch_conditional"
             if(app_env.long_name.equals('Production') ){
