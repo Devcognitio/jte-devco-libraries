@@ -1,7 +1,13 @@
 void call(){
-    stage("unit test gradle"){
+    def java_tool_name = config.java_tool ?:
+            "java"
+
+    stage("unit test maven"){
         node{
-            sh './mvnw verify'
+            def java = tool "$java_tool_name"
+            withEnv(["PATH=$java/bin:$PATH"]) {       
+                sh './mvnw verify'
+            }
         }                
     }  
 }
