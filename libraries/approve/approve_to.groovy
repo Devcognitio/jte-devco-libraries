@@ -5,7 +5,7 @@ void call(app_env){
 
     if(branch_conditional == "s" || branch_conditional == $env.BRANCH_NAME){
         stage ("Deploy Approve to ${app_env.long_name}") {
-            echo "Branch: $env.BRANCH_NAME"
+            echo "Branch: $env.BRANCH_NAME, conditional: $branch_conditional"
             if(app_env.long_name.equals('Production') ){
                 timeout(time:1, unit:'DAYS'){  
                     input message: 'Can you approve for IT ??', submitter: app_env.approversIT                
