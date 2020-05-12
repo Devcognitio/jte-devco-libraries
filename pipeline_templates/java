@@ -1,5 +1,4 @@
 checkout_git()
 build()
 unit_test()
-approve_to prod
 deploy_to prod
